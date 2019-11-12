@@ -5,20 +5,51 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Formulario</h1>
-    <!-- action script al que mandamos formulario
-    Por defecto method=get -->
-    <form action="ejemplo.php" method="get">
-        <p>Nombre: <input type="text" name="nombre" size="40"></p>
-        <p>Año de nacimiento: <input type="number" name="nacido" min="1900"></p>
-        <p>Sexo:
-        <input type="radio" name="hm" value="h"> Hombre
-        <input type="radio" name="hm" value="m"> Mujer
-        </p>
-        <p>
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Borrar">
-        </p>
-    </form>
+    <main>
+        <h1>Formulario</h1>
+        <!-- action script al que mandamos formulario
+        Por defecto method=get -->
+        <form action="ejemplo.php" method="get">
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <p>Nombre: <input type="text" name="nombre" size="20" required placeholder="Nombre"></p>
+            <p>Año de nacimiento: <input type="number" name="nacido" min="1900" placeholder="Año de nacimiento"></p>
+            <p>Correo: <input type="email" name="correo" size="40"></p>
+            <p>Contrasena: <input type="password" name="contrasena"></p>
+            <p>Escriba un número cualquiera:
+                    <input type="number" name="numero" step="any"></p>
+            <p>Sexo:
+            <input type="radio" name="hm" value="h"> Hombre
+            <input type="radio" name="hm" value="m"> Mujer
+            </p>
+        </fieldset>
+            <p><input type="checkbox" name="casilla">Casilla 1</p>
+            <p>Búsqueda: <input type="search" name="busqueda" size="40"></p>
+            <p>URL: <input type="url" name="direccion" size="40"></p>
+            <!-- IMPORTANTE -->
+            <p>Fecha: <input type="date" name="fecha"></p>
+            <p>Fecha y hora: <input type="datetime-local" name="fechaHora"></p>
+            <p>Indique su nivel (de 0 a 1, de 0,1 en 0,1):<input type="range" name="rango" min="0" max="1" step="0.1"></p>
+            <p><input type="file" name="archivo"></p>
+            <textarea name="texto" rows="3" cols="30" placeholder="Mensaje"></textarea>
+            <p>
+            <p>Elija una opción: <select name="menu">
+                <option value="1">Uno</option>
+                <option value="2">Dos</option>
+                <option value="3" selected>Tres</option>
+            </select></p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+            <input type="button" onclick="mensaje('Ha pulsado el botón')" value="Botón">
+            <input type="color" name="colorElegido">
+            <input type="color" name="colorElegido" value="#ff0000">
+            </p>
+        </form>
+    </main>
+    <script>
+        function mensaje(texto) {
+            alert(texto);
+        }
+    </script>
 </body>
 </html>
